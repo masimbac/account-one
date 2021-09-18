@@ -1,4 +1,4 @@
-package za.co.dandemutande.accountoneapi;
+package za.co.dandemutande.accountone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
