@@ -18,6 +18,7 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public Account createAccount(Account account) {
+		
 		return null;
 	}
 
@@ -27,17 +28,17 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Account deleteAccount(String id) {
+	public Account deleteAccount(Long id) {
 		return null;
 	}
 
 	@Override
-	public Account getAccount(String id) {
+	public Account getAccount(Long id) {
 		return null;
 	}
 
 	@Override
-	public List<Account> getAccounts(String customerId) {
+	public List<Account> getAccounts(Long customerId) {
 		return null;
 	}
 	

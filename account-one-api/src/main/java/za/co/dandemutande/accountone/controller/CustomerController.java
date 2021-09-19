@@ -23,22 +23,26 @@ public class CustomerController {
 	
 	@PostMapping
 	public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
-		return null;
+		customer = customerService.createCustomer(customer);
+		return ResponseEntity.ok(customer);
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) {
-		return null;
+		customer = customerService.updateCustomer(customer);
+		return ResponseEntity.ok(customer);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Customer> getCustomer(String id) {
-		return null;
+	public ResponseEntity<Customer> getCustomer(Long id) {
+		Customer customer = customerService.getCustomer(id);
+		return ResponseEntity.ok(customer);
 	}
 	
 	@GetMapping()
 	public ResponseEntity<List<Customer>> getCustomers() {
-		return null;
+		List<Customer> customers = customerService.getCustomers();
+		return ResponseEntity.ok(customers);
 	}
 
 }

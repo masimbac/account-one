@@ -32,7 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer getCustomer(String id) {
+	public Customer getCustomer(Long id) {
 		return null;
 	}
 
