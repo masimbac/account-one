@@ -1,11 +1,10 @@
 package za.co.dandemutande.accountone;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -30,7 +29,7 @@ class AccountOneApiApplicationTests {
 	}
 
 	@Test
-	public void shouldFindExistingCustomer() throws Exception {
+	public void shouldFindExistingCustomers() throws Exception {
 		final String baseUrl = String.format("http://localhost:%s/customers", randomServerPort);
 		URI uri = new URI(baseUrl);
 		ResponseEntity<Customer[]> result = this.restTemplate.getForEntity(uri, Customer[].class);
@@ -56,7 +55,7 @@ class AccountOneApiApplicationTests {
 	}
 
 	@Test
-	public void shouldAddAccountWithoutValidTransaction() {
+	public void shouldAddAccountWithoutTransaction() {
 
 	}
 
