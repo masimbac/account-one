@@ -1,5 +1,6 @@
 package za.co.dandemutande.accountone.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import za.co.dandemutande.accountone.model.Account;
@@ -38,7 +40,7 @@ public class AccountController {
 		acc.setInitialCredit(account.getAmount());
 		acc.setBalance(account.getAmount());
 		acc = accountService.createAccount(acc);
-		if (true) {
+		if (account.getAmount().compareTo(BigDecimal.ZERO) != 0) {
 			Transaction transaction = new Transaction();
 			transaction.setAccount(acc);
 			transaction.setAmount(acc.getInitialCredit());
@@ -48,19 +50,19 @@ public class AccountController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Account> getAccount(Long id) {
+	public ResponseEntity<Account> getAccount(@PathVariable("id") Long id) {
 		Account account = accountService.getAccount(id);
 		return ResponseEntity.ok(account);
 	}
 	
 	@GetMapping("/{accountId}/transactions")
-	public ResponseEntity<List<Transaction>> getTransactions(@PathVariable("accountId") String accountId) {
+	public ResponseEntity<List<Transaction>> getTransactions(@PathVariable("accountId") Long accountId) {
 		List<Transaction> transactions = transactionService.getTransactions(accountId);
 		return ResponseEntity.ok(transactions);
 	}
 	
 	@GetMapping()
-	public ResponseEntity<List<Account>> getAccounts(Long customerId) {
+	public ResponseEntity<List<Account>> getAccounts(@RequestParam("customerId") Long customerId) {
 		List<Account> accounts = accountService.getAccounts(customerId);
 		return ResponseEntity.ok(accounts);
 	}

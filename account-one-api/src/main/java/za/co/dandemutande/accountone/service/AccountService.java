@@ -10,8 +10,6 @@ public interface AccountService {
 	
 	Account updateAccount(Account account);
 	
-	Account deleteAccount(Long id);
-	
 	Account getAccount(Long id);
 	
 	List<Account> getAccounts(Long customerId);
