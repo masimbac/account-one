@@ -31,5 +31,5 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Run maven
-        run: mvn --batch-mode clean install
+      - run: mvn --batch-mode clean install
       
