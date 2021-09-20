@@ -10,9 +10,7 @@ public interface CustomerService {
 
 	Customer updateCustomer(Customer customer);
 
-	Customer deleteCustomer(String id);
-
-	Customer getCustomer(String id);
+	Customer getCustomer(Long id);
 
 	List<Customer> getCustomers();
 

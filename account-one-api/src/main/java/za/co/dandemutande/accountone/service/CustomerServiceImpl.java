@@ -18,27 +18,23 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Customer createCustomer(Customer customer) {
-		return null;
+		return customerRepository.save(customer);
 	}
 
 	@Override
 	public Customer updateCustomer(Customer customer) {
-		return null;
+		return customerRepository.save(customer);
 	}
 
-	@Override
-	public Customer deleteCustomer(String id) {
-		return null;
-	}
 
 	@Override
-	public Customer getCustomer(String id) {
-		return null;
+	public Customer getCustomer(Long id) {
+		return customerRepository.findById(id).orElse(null);
 	}
 
 	@Override
 	public List<Customer> getCustomers() {
-		return null;
+		return customerRepository.findAll();
 	}
 
 }

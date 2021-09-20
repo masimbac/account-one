@@ -8,12 +8,8 @@ public interface TransactionService {
 	
 	Transaction createTransaction(Transaction transaction);
 
-	Transaction updateTransaction(Transaction transaction);
+	Transaction getTransaction(Long id);
 
-	Transaction deleteTransaction(String id);
-
-	Transaction getTransaction(String id);
-
-	List<Transaction> getTransactions(String accountId);
+	List<Transaction> getTransactions(Long accountId);
 
 }

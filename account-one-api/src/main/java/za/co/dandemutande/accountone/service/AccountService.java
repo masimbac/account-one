@@ -10,10 +10,8 @@ public interface AccountService {
 	
 	Account updateAccount(Account account);
 	
-	Account deleteAccount(String id);
+	Account getAccount(Long id);
 	
-	Account getAccount(String id);
-	
-	List<Account> getAccounts(String customerId);
+	List<Account> getAccounts(Long customerId);
 
 }

@@ -18,27 +18,17 @@ public class TransactionServiceImpl implements TransactionService {
 
 	@Override
 	public Transaction createTransaction(Transaction transaction) {
-		return null;
+		return transactionRepository.save(transaction);
 	}
 
 	@Override
-	public Transaction updateTransaction(Transaction transaction) {
-		return null;
+	public Transaction getTransaction(Long id) {
+		return transactionRepository.getById(id);
 	}
 
 	@Override
-	public Transaction deleteTransaction(String id) {
-		return null;
-	}
-
-	@Override
-	public Transaction getTransaction(String id) {
-		return null;
-	}
-
-	@Override
-	public List<Transaction> getTransactions(String accountId) {
-		return null;
+	public List<Transaction> getTransactions(Long accountId) {
+		return transactionRepository.findByAccountId(accountId);
 	}
 
 }
