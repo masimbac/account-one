@@ -17,8 +17,8 @@
 	<properties>
 		<java.version>8</java.version>
 		<frontend-src-dir>${project.basedir}/../account-one-frontend</frontend-src-dir>
-		<node.version>v16.9.1</node.version>
-		<yarn.version>v1.17.3</yarn.version>
+		<node.version>v14.15.1</node.version>
+		<yarn.version>v1.16.0</yarn.version>
 		<frontend-maven-plugin.version>1.7.6</frontend-maven-plugin.version>
 	</properties>
 	<dependencies>
