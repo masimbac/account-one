@@ -1,2 +1,34 @@
 # account-one
 A project to POC management of accounts
+
+## Instructions
+
+Fork, then download or clone the repo.
+```bash
+git clone https://github.com/<your-user-name>/account-one.git
+```
+
+Change the directory.
+```bash
+cd into the project directory.
+```
+
+Ensure that you have at least Java 8 and Maven installed on your machine and run the below.
+```bash
+mvn clean install
+```
+
+Run the java app using the below command.
+```bash
+java -jar account-one-api/target/account-one-api-0.0.1-SNAPSHOT.jar
+```
+
+In you browser navigate to the following URL.
+```bash
+http://localhost:8080
+```
+
+To view the Swagger docs navigate to the below in your browser.
+```bash
+http://localhost:8080/swagger-ui.html
+```
