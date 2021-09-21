@@ -23,12 +23,11 @@ Run the java app using the below command.
 java -jar account-one-api/target/account-one-api-0.0.1-SNAPSHOT.jar
 ```
 
-In you browser navigate to the following URL.
-```bash
-http://localhost:8080
-```
-
 To view the Swagger docs navigate to the below in your browser.
 ```bash
 http://localhost:8080/swagger-ui.html
 ```
+
+##CI/CD
+This project uses Git Actions to build and run tests when a push / change resuest is issued on the main and dev branches.
+Upon release, the project will build, test, create a docker image that is published to the AWS ECR.
