@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -24,8 +25,10 @@ public class Transaction {
 	private Long id;
 	@ManyToOne
 	@JoinColumn(name = "account_id", referencedColumnName = "id")
+	@NotNull(message = "Account is required")
 	private Account account;
 	@Column
+	@NotNull(message = "Amount is required")
 	private BigDecimal amount;
 
 }
