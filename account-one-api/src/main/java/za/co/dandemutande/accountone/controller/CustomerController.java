@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,7 +55,7 @@ public class CustomerController {
 	@ApiOperation("Finds the customer identified by a given ID.")
 	@ApiResponses({ @ApiResponse(code = 200, message = "Customer has been found on the system"),
 			@ApiResponse(code = 404, message = "Customer identified by supplied ID not found on the system") })
-	public ResponseEntity<Customer> getCustomer(Long id) {
+	public ResponseEntity<Customer> getCustomer(@PathVariable("id") Long id) {
 		Customer customer = customerService.getCustomer(id);
 		return customer == null ? new ResponseEntity<Customer>(HttpStatus.NOT_FOUND) : ResponseEntity.ok(customer);
 	}
